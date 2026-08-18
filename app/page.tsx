@@ -1,7 +1,40 @@
 import type { Metadata } from "next";
-import { linkHref, siteConfig, type SiteLink } from "../data/site-config";
+import {
+  Brain,
+  CardsThree,
+  EnvelopeSimple,
+  InstagramLogo,
+  TiktokLogo,
+  UserCircle,
+  WhatsappLogo,
+  YoutubeLogo,
+} from "@phosphor-icons/react/dist/ssr";
+import {
+  linkHref,
+  siteConfig,
+  type IconName,
+  type SiteLink,
+} from "../data/site-config";
 
 const { profile, seo } = siteConfig;
+
+const icons = {
+  brain: Brain,
+  "tarot-cards": CardsThree,
+  whatsapp: WhatsappLogo,
+  instagram: InstagramLogo,
+  youtube: YoutubeLogo,
+  tiktok: TiktokLogo,
+  email: EnvelopeSimple,
+  profile: UserCircle,
+} satisfies Record<IconName, typeof Brain>;
+
+const brandIcons = new Set<IconName>([
+  "whatsapp",
+  "instagram",
+  "youtube",
+  "tiktok",
+]);
 
 export const metadata: Metadata = {
   title: seo.title,
@@ -30,6 +63,7 @@ function LinkCard({ link }: { link: SiteLink }) {
   const external = link.kind === "external" || link.kind === "whatsapp";
   const label = external ? `${link.label} (abre em nova aba)` : link.label;
   const arrow = link.kind === "anchor" ? "↓" : external ? "↗" : "→";
+  const Icon = icons[link.icon];
 
   return (
     <a
@@ -39,7 +73,12 @@ function LinkCard({ link }: { link: SiteLink }) {
       rel={external ? "noopener noreferrer" : undefined}
       aria-label={label}
     >
-      <span className="link-symbol" aria-hidden="true">{link.symbol}</span>
+      <span className="link-symbol" aria-hidden="true">
+        <Icon
+          size={link.featured ? 27 : 23}
+          weight={brandIcons.has(link.icon) ? "fill" : link.featured ? "duotone" : "regular"}
+        />
+      </span>
       <span className="link-copy">
         <strong>{link.label}</strong>
         <small>{link.description}</small>

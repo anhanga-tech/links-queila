@@ -1,11 +1,20 @@
 export type LinkKind = "whatsapp" | "external" | "email" | "anchor";
+export type IconName =
+  | "brain"
+  | "tarot-cards"
+  | "whatsapp"
+  | "instagram"
+  | "youtube"
+  | "tiktok"
+  | "email"
+  | "profile";
 
 export interface SiteLink {
   id: string;
   label: string;
   description: string;
   kind: LinkKind;
-  symbol: string;
+  icon: IconName;
   href?: string;
   message?: string;
   featured?: boolean;
@@ -56,7 +65,7 @@ export const siteConfig: SiteConfig = {
       label: "Agendar psicanálise",
       description: "Converse sobre o acompanhamento",
       kind: "whatsapp",
-      symbol: "◌",
+      icon: "brain",
       message: "Olá, gostaria de informações sobre o atendimento de psicanálise.",
       featured: true,
     },
@@ -65,7 +74,7 @@ export const siteConfig: SiteConfig = {
       label: "Consultar o tarô",
       description: "Orientação para escolhas e ciclos",
       kind: "whatsapp",
-      symbol: "✦",
+      icon: "tarot-cards",
       message: "Olá, gostaria de informações sobre uma consulta de tarô.",
       featured: true,
     },
@@ -76,7 +85,7 @@ export const siteConfig: SiteConfig = {
       label: "Falar no WhatsApp",
       description: "Tire dúvidas antes de escolher",
       kind: "whatsapp",
-      symbol: "☾",
+      icon: "whatsapp",
       message: "Olá, encontrei seu perfil e gostaria de saber mais sobre os atendimentos.",
     },
     {
@@ -84,7 +93,7 @@ export const siteConfig: SiteConfig = {
       label: "Instagram",
       description: "Conteúdos e reflexões",
       kind: "external",
-      symbol: "◎",
+      icon: "instagram",
       href: "https://www.instagram.com/queiladeoliveirar",
     },
     {
@@ -92,7 +101,7 @@ export const siteConfig: SiteConfig = {
       label: "YouTube",
       description: "Vídeos de Queila de Oliveira",
       kind: "external",
-      symbol: "▷",
+      icon: "youtube",
       href: "https://www.youtube.com/@queiladeoliveirar",
     },
     {
@@ -100,7 +109,7 @@ export const siteConfig: SiteConfig = {
       label: "TikTok",
       description: "Acompanhe @queiladeoliveirar",
       kind: "external",
-      symbol: "♪",
+      icon: "tiktok",
       href: "https://www.tiktok.com/@queiladeoliveirar",
     },
     {
@@ -108,7 +117,7 @@ export const siteConfig: SiteConfig = {
       label: "E-mail",
       description: "queiladeoliveirar@gmail.com",
       kind: "email",
-      symbol: "@",
+      icon: "email",
       href: "mailto:queiladeoliveirar@gmail.com",
     },
     {
@@ -116,7 +125,7 @@ export const siteConfig: SiteConfig = {
       label: "Sobre a profissional",
       description: "Conheça a abordagem de atendimento",
       kind: "anchor",
-      symbol: "✧",
+      icon: "profile",
       href: "#sobre",
     },
   ],

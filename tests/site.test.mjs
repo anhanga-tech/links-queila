@@ -33,6 +33,8 @@ test("renderiza a página de links completa e protegida por noindex", async () =
 test("mantém psicanálise em primeiro lugar e usa os contatos públicos confirmados", async () => {
   const source = await readFile(new URL("../data/site-config.ts", import.meta.url), "utf8");
   assert.ok(source.indexOf('id: "psicanalise"') < source.indexOf('id: "taro"'));
+  assert.match(source, /icon: "brain"/);
+  assert.match(source, /icon: "tarot-cards"/);
   assert.match(source, /encodeURIComponent\(link\.message/);
   assert.match(source, /5511988093689/);
   assert.match(source, /queiladeoliveirar@gmail\.com/);
