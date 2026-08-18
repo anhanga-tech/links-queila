@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   Brain,
   EnvelopeSimple,
@@ -8,7 +7,7 @@ import {
   UserCircle,
   WhatsappLogo,
   YoutubeLogo,
-} from "@phosphor-icons/react/dist/ssr";
+} from "@phosphor-icons/react";
 import {
   linkHref,
   siteConfig,
@@ -16,7 +15,7 @@ import {
   type SiteLink,
 } from "../data/site-config";
 
-const { profile, seo } = siteConfig;
+const { profile } = siteConfig;
 
 const icons = {
   brain: Brain,
@@ -54,29 +53,6 @@ function LinkIcon({ link }: { link: SiteLink }) {
   );
 }
 
-export const metadata: Metadata = {
-  title: seo.title,
-  description: seo.description,
-  alternates: { canonical: seo.canonical },
-  robots: siteConfig.isProductionReady
-    ? { index: true, follow: true }
-    : { index: false, follow: false, nocache: true },
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: seo.canonical,
-    title: seo.title,
-    description: seo.description,
-    images: [profile.portraitSrc],
-  },
-  twitter: {
-    card: "summary",
-    title: seo.title,
-    description: seo.description,
-    images: [profile.portraitSrc],
-  },
-};
-
 function LinkCard({ link }: { link: SiteLink }) {
   const external = link.kind === "external" || link.kind === "whatsapp";
   const label = external ? `${link.label} (abre em nova aba)` : link.label;
@@ -102,35 +78,15 @@ function LinkCard({ link }: { link: SiteLink }) {
   );
 }
 
-export default function Home() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    jobTitle: profile.professionalTitle,
-    url: seo.canonical,
-    description: seo.description,
-    email: siteConfig.contact.email,
-    telephone: `+${siteConfig.contact.whatsappNumber}`,
-    sameAs: siteConfig.otherLinks
-      .filter((link) => link.kind === "external")
-      .map((link) => link.href),
-  };
-
+export function App() {
   return (
     <main className="site-shell">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
       <div className="celestial-mark celestial-mark-one" aria-hidden="true">✦</div>
       <div className="celestial-mark celestial-mark-two" aria-hidden="true">☾</div>
 
       <article className="profile-card" aria-labelledby="profile-name">
         <header className="profile-header">
           <div className="portrait-frame">
-            {/* vinext currently duplicates React when next/image is hot-loaded; this local image avoids that runtime failure. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="portrait-photo"
               src={profile.portraitSrc}
@@ -190,3 +146,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default App;

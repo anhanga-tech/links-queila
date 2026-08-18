@@ -1,20 +1,8 @@
 # Links — deoliveirar.com
 
-Página mobile-first de links para atendimentos de terapia e tarô. A versão atual
-usa conteúdo placeholder e permanece privada e marcada como `noindex`.
-
-## Personalização
-
-Edite `data/site-config.ts` para substituir:
-
-- nome, título, apresentação e texto “sobre”;
-- telefone do WhatsApp (com código do país e DDD);
-- Instagram, cidade, localização e mensagens dos serviços;
-- título, descrição e endereço canônico.
-
-Substitua o marcador circular por uma foto real e revisada. Somente após validar
-todos os dados, altere `isProductionReady` para `true`; isso habilita a indexação
-da versão pública.
+Página mobile-first de links para os atendimentos de Queila de Oliveira. O site
+é uma aplicação React/TypeScript totalmente estática, preparada para Cloudflare
+Pages e mantida como `noindex` até a revisão final dos dados profissionais.
 
 ## Desenvolvimento
 
@@ -26,6 +14,23 @@ pnpm lint
 pnpm test
 ```
 
-O site não possui formulários, banco de dados, autenticação ou rastreamento de
-audiência. Os botões direcionam para WhatsApp, Instagram, localização ou para a
-seção interna “Sobre o atendimento”.
+Edite `data/site-config.ts` para atualizar perfil, telefone, mensagens,
+serviços, redes sociais e SEO. Somente após revisar todo o conteúdo, altere
+`isProductionReady` para `true` para permitir indexação.
+
+## Cloudflare Pages
+
+Conecte o repositório GitHub ao Pages com estas opções:
+
+- Framework preset: **React (Vite)**
+- Production branch: `main`
+- Build command: `pnpm build`
+- Build output directory: `dist`
+
+O domínio canônico é `https://deoliveirar.com`. Adicione-o em **Custom domains**
+no projeto Pages somente depois de revisar os registros DNS existentes. Preserve
+registros MX e TXT. Configure `www.deoliveirar.com` separadamente para
+redirecionar à raiz.
+
+O projeto não possui formulários, banco de dados, autenticação ou rastreamento.
+Os botões apenas abrem WhatsApp, redes sociais, e-mail ou a seção interna.

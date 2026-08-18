@@ -2,40 +2,47 @@
 
 ## Project Structure & Module Organization
 
-This repository is currently an empty scaffold: no source, tests, assets, or build manifest have been added. Reserve the root for `README.md`, dependency manifests, and tool configuration. As the project grows, use this layout:
-
-- `src/` for application code, grouped by feature rather than file type.
-- `tests/` for integration and end-to-end tests; colocate unit tests when supported.
-- `public/` or `assets/` for static files such as images and fonts.
-- `scripts/` for repeatable maintenance and release tasks.
-
-Document deviations in `README.md` and update this guide once the architecture is established.
+This is a single-page React/TypeScript site deployed as static files to
+Cloudflare Pages. `src/App.tsx` contains the page structure and reusable link
+components; `src/main.tsx` mounts the application; `src/styles.css` owns the
+visual system and responsive rules. Keep editable profile, service, contact,
+and SEO data centralized in `data/site-config.ts`. Static images belong in
+`public/`, while behavioral and output checks live in `tests/`.
 
 ## Build, Test, and Development Commands
 
-No package manager or build system is configured. When adding one, expose a consistent command set in the README. For Node, prefer:
+- `pnpm install` — install the locked dependency set.
+- `pnpm dev` — start Vite locally on port 3000.
+- `pnpm build` — type-check and create the Pages-ready `dist/` directory.
+- `pnpm lint` — run ESLint across TypeScript and React sources.
+- `pnpm test` — build, render the page, and verify content and metadata.
 
-- `pnpm dev` — start the local development server.
-- `pnpm build` — produce a production build.
-- `pnpm test` — run the automated test suite.
-- `pnpm lint` — check formatting and static-analysis rules.
-
-Do not commit generated output, dependency directories, or local environment files.
+Cloudflare Pages must use `pnpm build` with `dist` as its output directory.
+Never commit `dist/`, `node_modules/`, local environment files, or credentials.
 
 ## Coding Style & Naming Conventions
 
-Add formatter and linter configuration with the first source code; treat the formatter as authoritative. Default to two-space indentation for JavaScript, TypeScript, JSON, YAML, and CSS. Use `PascalCase` for components and classes, `camelCase` for functions and variables, and `kebab-case` for filenames unless the framework dictates otherwise. Keep modules focused.
+Use two-space indentation and let existing ESLint rules guide TypeScript and
+JSX changes. Name React components with `PascalCase`, functions and variables
+with `camelCase`, and asset files with `kebab-case`. Prefer semantic HTML,
+focused components, and configuration-driven content. External links must keep
+accessible labels, `target="_blank"`, and `rel="noopener noreferrer"`.
 
 ## Testing Guidelines
 
-Every behavior change should include a test or explain why testing is impractical. Name tests after observable behavior, such as `renders-empty-state.test.ts`. Cover success, failure, and boundary cases. Keep tests deterministic and independent of production services.
+Tests use Node's built-in test runner plus Vite SSR for markup checks. Update
+`tests/site.test.mjs` whenever services, metadata, URLs, or publication rules
+change. Keep tests deterministic and verify `pnpm test` before pushing.
 
 ## Commit & Pull Request Guidelines
 
-No usable Git history exists to infer a convention. Use concise, imperative subjects, optionally following Conventional Commits: `feat: add link search` or `fix: handle invalid URL`. Keep each commit to one logical change.
+Use concise imperative or Conventional Commit subjects, such as
+`feat: prepare Cloudflare Pages build`. Keep commits limited to one logical
+change. Pull requests should explain the purpose, list verification commands,
+link relevant issues, and include screenshots for visual changes.
 
-Pull requests should explain the purpose, summarize changes, list verification commands, and link issues. Include screenshots for UI changes. Call out migrations, configuration changes, and follow-up work; request review only after local checks pass.
+## Security & Publication
 
-## Security & Configuration
-
-Store secrets in ignored environment files such as `.env.local`, and provide a sanitized `.env.example` containing required variable names. Validate external URLs and user input at system boundaries. Never log credentials, tokens, or sensitive user data.
+Keep `isProductionReady` false until all professional information is approved.
+Preserve Cloudflare DNS records unrelated to the site, especially MX and TXT.
+Do not add analytics, pixels, secrets, or personal data without explicit review.
