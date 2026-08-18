@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   Brain,
-  CardsThree,
   EnvelopeSimple,
   InstagramLogo,
   TiktokLogo,
@@ -20,14 +19,13 @@ const { profile, seo } = siteConfig;
 
 const icons = {
   brain: Brain,
-  "tarot-cards": CardsThree,
   whatsapp: WhatsappLogo,
   instagram: InstagramLogo,
   youtube: YoutubeLogo,
   tiktok: TiktokLogo,
   email: EnvelopeSimple,
   profile: UserCircle,
-} satisfies Record<IconName, typeof Brain>;
+} satisfies Record<Exclude<IconName, "tarot-cards">, typeof Brain>;
 
 const brandIcons = new Set<IconName>([
   "whatsapp",
@@ -35,6 +33,30 @@ const brandIcons = new Set<IconName>([
   "youtube",
   "tiktok",
 ]);
+
+function LinkIcon({ link }: { link: SiteLink }) {
+  if (link.icon === "tarot-cards") {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        className="tarot-icon"
+        src="/tarot-icon.png"
+        alt=""
+        width={30}
+        height={38}
+      />
+    );
+  }
+
+  const Icon = icons[link.icon];
+
+  return (
+    <Icon
+      size={link.featured ? 27 : 23}
+      weight={brandIcons.has(link.icon) ? "fill" : link.featured ? "duotone" : "regular"}
+    />
+  );
+}
 
 export const metadata: Metadata = {
   title: seo.title,
@@ -63,7 +85,6 @@ function LinkCard({ link }: { link: SiteLink }) {
   const external = link.kind === "external" || link.kind === "whatsapp";
   const label = external ? `${link.label} (abre em nova aba)` : link.label;
   const arrow = link.kind === "anchor" ? "↓" : external ? "↗" : "→";
-  const Icon = icons[link.icon];
 
   return (
     <a
@@ -74,10 +95,7 @@ function LinkCard({ link }: { link: SiteLink }) {
       aria-label={label}
     >
       <span className="link-symbol" aria-hidden="true">
-        <Icon
-          size={link.featured ? 27 : 23}
-          weight={brandIcons.has(link.icon) ? "fill" : link.featured ? "duotone" : "regular"}
-        />
+        <LinkIcon link={link} />
       </span>
       <span className="link-copy">
         <strong>{link.label}</strong>

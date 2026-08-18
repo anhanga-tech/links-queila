@@ -111,6 +111,7 @@ h1 { margin: 0; color: var(--wine-deep); font-size: clamp(30px, 9vw, 42px); font
   display: flex;
   justify-content: center;
 }
+.tarot-icon { display: block; width: 30px; height: 38px; object-fit: contain; }
 .link-copy { min-width: 0; }
 .link-copy strong, .link-copy small { display: block; }
 .link-copy strong { font-size: 15px; }
