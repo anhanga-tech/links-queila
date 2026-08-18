@@ -19,11 +19,11 @@ da versão pública.
 ## Desenvolvimento
 
 ```bash
-npm install
-npm run dev
-npm run build
-npm run lint
-npm test
+pnpm install
+pnpm dev
+pnpm build
+pnpm lint
+pnpm test
 ```
 
 O site não possui formulários, banco de dados, autenticação ou rastreamento de

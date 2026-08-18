@@ -15,10 +15,10 @@ Document deviations in `README.md` and update this guide once the architecture i
 
 No package manager or build system is configured. When adding one, expose a consistent command set in the README. For Node, prefer:
 
-- `npm run dev` — start the local development server.
-- `npm run build` — produce a production build.
-- `npm test` — run the automated test suite.
-- `npm run lint` — check formatting and static-analysis rules.
+- `pnpm dev` — start the local development server.
+- `pnpm build` — produce a production build.
+- `pnpm test` — run the automated test suite.
+- `pnpm lint` — check formatting and static-analysis rules.
 
 Do not commit generated output, dependency directories, or local environment files.
 
