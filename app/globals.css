@@ -3,6 +3,9 @@
 :root {
   --wine: #512c35;
   --wine-deep: #351b23;
+  --moss: #68765b;
+  --moss-deep: #536047;
+  --moss-light: #7d896f;
   --terracotta: #a8614f;
   --cream: #f7f0e5;
   --paper: #fffaf1;
@@ -12,8 +15,8 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--wine-deep); scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--wine-deep); font-family: Arial, Helvetica, sans-serif; }
+html { background: var(--moss-deep); scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--moss-deep); font-family: Arial, Helvetica, sans-serif; }
 a { color: inherit; }
 
 .site-shell {
@@ -22,9 +25,9 @@ a { color: inherit; }
   display: grid;
   place-items: start center;
   background:
-    radial-gradient(circle at 12% 8%, rgba(185, 154, 93, .2), transparent 28rem),
-    radial-gradient(circle at 90% 72%, rgba(168, 97, 79, .26), transparent 28rem),
-    linear-gradient(155deg, var(--wine-deep), var(--wine) 54%, #6b3940);
+    radial-gradient(circle at 12% 8%, rgba(231, 213, 167, .22), transparent 28rem),
+    radial-gradient(circle at 90% 72%, rgba(185, 154, 93, .18), transparent 28rem),
+    linear-gradient(155deg, var(--moss-deep), var(--moss) 54%, var(--moss-light));
   position: relative;
   overflow: hidden;
 }
@@ -50,7 +53,7 @@ a { color: inherit; }
   border: 1px solid rgba(185, 154, 93, .6);
   border-radius: 28px;
   background: rgba(255, 250, 241, .975);
-  box-shadow: 0 28px 70px rgba(25, 9, 14, .38);
+  box-shadow: 0 28px 70px rgba(28, 35, 24, .34);
   position: relative;
   z-index: 1;
 }
