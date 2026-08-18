@@ -3,6 +3,7 @@ import {
   Brain,
   EnvelopeSimple,
   InstagramLogo,
+  Sun,
   TiktokLogo,
   UserCircle,
   WhatsappLogo,
@@ -37,14 +38,9 @@ const brandIcons = new Set<IconName>([
 function LinkIcon({ link }: { link: SiteLink }) {
   if (link.icon === "tarot-cards") {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        className="tarot-icon"
-        src="/tarot-icon.png"
-        alt=""
-        width={30}
-        height={38}
-      />
+      <span className="tarot-card-icon">
+        <Sun size={17} weight="bold" />
+      </span>
     );
   }
 

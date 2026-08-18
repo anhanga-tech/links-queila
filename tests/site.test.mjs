@@ -20,7 +20,7 @@ test("renderiza a página de links completa e protegida por noindex", async () =
   assert.match(html, /Queila de Oliveira/);
   assert.match(html, /Agendar psicanálise/);
   assert.match(html, /Consultar o tarô/);
-  assert.match(html, /src="\/tarot-icon\.png"/);
+  assert.match(html, /tarot-card-icon/);
   assert.match(html, /Falar no WhatsApp/);
   assert.match(html, /YouTube/);
   assert.match(html, /TikTok/);
