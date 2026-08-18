@@ -1,4 +1,4 @@
-export type LinkKind = "whatsapp" | "external" | "anchor";
+export type LinkKind = "whatsapp" | "external" | "email" | "anchor";
 
 export interface SiteLink {
   id: string;
@@ -19,38 +19,45 @@ export interface SiteConfig {
     eyebrow: string;
     introduction: string;
     about: string;
+    portraitSrc: string;
     portraitAlt: string;
   };
-  whatsappNumber: string;
+  contact: {
+    whatsappNumber: string;
+    email: string;
+  };
   services: SiteLink[];
   otherLinks: SiteLink[];
-  location: { label: string; note: string; href: string };
+  location?: { label: string; note: string; href: string };
   seo: { title: string; description: string; canonical: string };
 }
 
-// PLACEHOLDERS: substitua estes dados e defina isProductionReady como true
-// somente depois de revisar nome, foto, credenciais e todos os destinos.
+// Mantenha false até revisar os dados profissionais e preencher o que ainda falta.
 export const siteConfig: SiteConfig = {
   isProductionReady: false,
   profile: {
-    name: "Nome da profissional",
-    professionalTitle: "Terapeuta e taróloga",
-    eyebrow: "Cuidado · Presença · Autoconhecimento",
+    name: "Queila de Oliveira",
+    professionalTitle: "Psicanalista e taróloga",
+    eyebrow: "Psicanálise · Tarô · Autoconhecimento",
     introduction:
-      "Um espaço seguro para acolher o que você sente, compreender seus ciclos e encontrar caminhos possíveis com mais clareza.",
+      "Ajudo pessoas em seu processo de autoconhecimento por meio da psicanálise e do tarô.",
     about:
-      "Aqui você será recebida com escuta, respeito e presença. O atendimento terapêutico vem em primeiro lugar, e o tarô pode ser uma ferramenta complementar de reflexão sobre escolhas e ciclos.",
-    portraitAlt: "Foto da profissional será adicionada em breve",
+      "Sou taróloga e psicanalista. Meu trabalho é voltado ao autoconhecimento e à reflexão sobre os caminhos, escolhas e ciclos de cada pessoa.",
+    portraitSrc: "/queila-de-oliveira.jpg",
+    portraitAlt: "Queila de Oliveira",
   },
-  whatsappNumber: "5500000000000",
+  contact: {
+    whatsappNumber: "5511988093689",
+    email: "queiladeoliveirar@gmail.com",
+  },
   services: [
     {
-      id: "terapia",
-      label: "Agendar terapia",
-      description: "Escuta e cuidado para o seu momento",
+      id: "psicanalise",
+      label: "Agendar psicanálise",
+      description: "Converse sobre o acompanhamento",
       kind: "whatsapp",
       symbol: "◌",
-      message: "Olá, gostaria de informações sobre terapia.",
+      message: "Olá, gostaria de informações sobre o atendimento de psicanálise.",
       featured: true,
     },
     {
@@ -78,7 +85,31 @@ export const siteConfig: SiteConfig = {
       description: "Conteúdos e reflexões",
       kind: "external",
       symbol: "◎",
-      href: "https://instagram.com/SEU_PERFIL",
+      href: "https://www.instagram.com/queiladeoliveirar",
+    },
+    {
+      id: "youtube",
+      label: "YouTube",
+      description: "Vídeos de Queila de Oliveira",
+      kind: "external",
+      symbol: "▷",
+      href: "https://www.youtube.com/@queiladeoliveirar",
+    },
+    {
+      id: "tiktok",
+      label: "TikTok",
+      description: "Acompanhe @queiladeoliveirar",
+      kind: "external",
+      symbol: "♪",
+      href: "https://www.tiktok.com/@queiladeoliveirar",
+    },
+    {
+      id: "email",
+      label: "E-mail",
+      description: "queiladeoliveirar@gmail.com",
+      kind: "email",
+      symbol: "@",
+      href: "mailto:queiladeoliveirar@gmail.com",
     },
     {
       id: "sobre",
@@ -89,15 +120,10 @@ export const siteConfig: SiteConfig = {
       href: "#sobre",
     },
   ],
-  location: {
-    label: "Atendimento online e em [Cidade]",
-    note: "Consulte disponibilidade e formato pelo WhatsApp.",
-    href: "https://maps.google.com/?q=SUA+CIDADE",
-  },
   seo: {
-    title: "Terapia e Tarô | deoliveirar.com",
+    title: "Queila de Oliveira | Psicanálise e Tarô",
     description:
-      "Acolhimento, escuta e autoconhecimento por meio da terapia e do tarô.",
+      "Psicanálise, tarô e autoconhecimento com Queila de Oliveira. Entre em contato e conheça os atendimentos.",
     canonical: "https://deoliveirar.com",
   },
 };
@@ -105,7 +131,7 @@ export const siteConfig: SiteConfig = {
 export function linkHref(link: SiteLink): string {
   if (link.kind === "whatsapp") {
     const message = encodeURIComponent(link.message ?? "");
-    return `https://wa.me/${siteConfig.whatsappNumber}?text=${message}`;
+    return `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${message}`;
   }
   return link.href ?? "#";
 }

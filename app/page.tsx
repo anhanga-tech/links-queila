@@ -16,17 +16,20 @@ export const metadata: Metadata = {
     url: seo.canonical,
     title: seo.title,
     description: seo.description,
+    images: [profile.portraitSrc],
   },
   twitter: {
     card: "summary",
     title: seo.title,
     description: seo.description,
+    images: [profile.portraitSrc],
   },
 };
 
 function LinkCard({ link }: { link: SiteLink }) {
   const external = link.kind === "external" || link.kind === "whatsapp";
   const label = external ? `${link.label} (abre em nova aba)` : link.label;
+  const arrow = link.kind === "anchor" ? "↓" : external ? "↗" : "→";
 
   return (
     <a
@@ -41,7 +44,7 @@ function LinkCard({ link }: { link: SiteLink }) {
         <strong>{link.label}</strong>
         <small>{link.description}</small>
       </span>
-      <span className="link-arrow" aria-hidden="true">{external ? "↗" : "↓"}</span>
+      <span className="link-arrow" aria-hidden="true">{arrow}</span>
     </a>
   );
 }
@@ -54,6 +57,11 @@ export default function Home() {
     jobTitle: profile.professionalTitle,
     url: seo.canonical,
     description: seo.description,
+    email: siteConfig.contact.email,
+    telephone: `+${siteConfig.contact.whatsappNumber}`,
+    sameAs: siteConfig.otherLinks
+      .filter((link) => link.kind === "external")
+      .map((link) => link.href),
   };
 
   return (
@@ -67,9 +75,17 @@ export default function Home() {
 
       <article className="profile-card" aria-labelledby="profile-name">
         <header className="profile-header">
-          <div className="portrait-placeholder" role="img" aria-label={profile.portraitAlt}>
-            <span aria-hidden="true">✦</span>
-            <small>foto</small>
+          <div className="portrait-frame">
+            {/* vinext currently duplicates React when next/image is hot-loaded; this local image avoids that runtime failure. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="portrait-photo"
+              src={profile.portraitSrc}
+              alt={profile.portraitAlt}
+              width={400}
+              height={400}
+              fetchPriority="high"
+            />
           </div>
           <p className="eyebrow">{profile.eyebrow}</p>
           <h1 id="profile-name">{profile.name}</h1>
@@ -98,17 +114,19 @@ export default function Home() {
           <p>{profile.about}</p>
         </section>
 
-        <a
-          className="location-card"
-          href={siteConfig.location.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${siteConfig.location.label} (abre em nova aba)`}
-        >
-          <span aria-hidden="true">⌖</span>
-          <span><strong>{siteConfig.location.label}</strong><small>{siteConfig.location.note}</small></span>
-          <span aria-hidden="true">↗</span>
-        </a>
+        {siteConfig.location ? (
+          <a
+            className="location-card"
+            href={siteConfig.location.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${siteConfig.location.label} (abre em nova aba)`}
+          >
+            <span aria-hidden="true">⌖</span>
+            <span><strong>{siteConfig.location.label}</strong><small>{siteConfig.location.note}</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ) : null}
 
         <footer className="site-footer">
           <span className="footer-ornament" aria-hidden="true">— ✦ —</span>
