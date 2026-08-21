@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T21:30:37-03:00",
+  "title": "Design System: Queila de Oliveira",
+  "extensions": {
+    "colorMeta": {
+      "wine": { "role": "primary", "displayName": "Vinho", "canonical": "#512c35", "tonalRamp": ["oklch(15% .035 6)", "oklch(26% .045 6)", "oklch(38% .055 6)", "oklch(50% .06 6)", "oklch(62% .05 6)", "oklch(74% .038 6)", "oklch(86% .022 6)", "oklch(95% .01 6)"] },
+      "wine-deep": { "role": "primary", "displayName": "Vinho Profundo", "canonical": "#351b23", "tonalRamp": ["oklch(15% .03 5)", "oklch(26% .04 5)", "oklch(38% .05 5)", "oklch(50% .055 5)", "oklch(62% .046 5)", "oklch(74% .034 5)", "oklch(86% .02 5)", "oklch(95% .008 5)"] },
+      "moss": { "role": "secondary", "displayName": "Verde Musgo", "canonical": "#68765b", "tonalRamp": ["oklch(15% .025 125)", "oklch(26% .035 125)", "oklch(38% .045 125)", "oklch(50% .05 125)", "oklch(62% .045 125)", "oklch(74% .035 125)", "oklch(86% .022 125)", "oklch(95% .01 125)"] },
+      "moss-deep": { "role": "secondary", "displayName": "Verde Musgo Profundo", "canonical": "#536047", "tonalRamp": ["oklch(15% .025 125)", "oklch(26% .034 125)", "oklch(38% .042 125)", "oklch(50% .047 125)", "oklch(62% .042 125)", "oklch(74% .032 125)", "oklch(86% .02 125)", "oklch(95% .008 125)"] },
+      "moss-light": { "role": "secondary", "displayName": "Verde Musgo Claro", "canonical": "#7d896f", "tonalRamp": ["oklch(15% .022 125)", "oklch(26% .032 125)", "oklch(38% .04 125)", "oklch(50% .045 125)", "oklch(62% .04 125)", "oklch(74% .031 125)", "oklch(86% .019 125)", "oklch(95% .008 125)"] },
+      "terracotta": { "role": "tertiary", "displayName": "Terracota Quente", "canonical": "#a8614f", "tonalRamp": ["oklch(15% .04 30)", "oklch(26% .06 30)", "oklch(38% .08 30)", "oklch(50% .1 30)", "oklch(62% .09 30)", "oklch(74% .065 30)", "oklch(86% .038 30)", "oklch(95% .014 30)"] },
+      "terracotta-text": { "role": "tertiary", "displayName": "Terracota Profunda", "canonical": "#985544", "tonalRamp": ["oklch(15% .04 30)", "oklch(26% .055 30)", "oklch(38% .072 30)", "oklch(50% .086 30)", "oklch(62% .076 30)", "oklch(74% .056 30)", "oklch(86% .032 30)", "oklch(95% .012 30)"] },
+      "cream": { "role": "neutral", "displayName": "Creme", "canonical": "#f7f0e5", "tonalRamp": ["oklch(15% .015 75)", "oklch(26% .018 75)", "oklch(38% .021 75)", "oklch(50% .024 75)", "oklch(62% .026 75)", "oklch(74% .024 75)", "oklch(86% .02 75)", "oklch(95% .014 75)"] },
+      "paper": { "role": "neutral", "displayName": "Papel Quente", "canonical": "#fffaf1", "tonalRamp": ["oklch(15% .012 75)", "oklch(26% .015 75)", "oklch(38% .018 75)", "oklch(50% .021 75)", "oklch(62% .022 75)", "oklch(74% .02 75)", "oklch(86% .016 75)", "oklch(95% .01 75)"] },
+      "gold": { "role": "tertiary", "displayName": "Dourado Suave", "canonical": "#b99a5d", "tonalRamp": ["oklch(15% .04 80)", "oklch(26% .06 80)", "oklch(38% .08 80)", "oklch(50% .1 80)", "oklch(62% .09 80)", "oklch(74% .065 80)", "oklch(86% .038 80)", "oklch(95% .014 80)"] },
+      "ink": { "role": "neutral", "displayName": "Tinta Quente", "canonical": "#35272a", "tonalRamp": ["oklch(15% .018 5)", "oklch(26% .022 5)", "oklch(38% .026 5)", "oklch(50% .028 5)", "oklch(62% .024 5)", "oklch(74% .018 5)", "oklch(86% .011 5)", "oklch(95% .005 5)"] },
+      "muted": { "role": "neutral", "displayName": "Texto Atenuado", "canonical": "#6d585d", "tonalRamp": ["oklch(15% .018 5)", "oklch(26% .025 5)", "oklch(38% .032 5)", "oklch(50% .036 5)", "oklch(62% .032 5)", "oklch(74% .024 5)", "oklch(86% .014 5)", "oklch(95% .006 5)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Nome da profissional e identidade principal." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de painéis e seções narrativas." },
+      "body": { "displayName": "Body", "purpose": "Apresentação profissional em medida curta." },
+      "editorial-body": { "displayName": "Editorial Body", "purpose": "Introdução e apresentação contemplativa." },
+      "section-title": { "displayName": "Section Title", "purpose": "Perguntas e divisores editoriais." },
+      "action-title": { "displayName": "Action Title", "purpose": "Rótulos principais dos links." },
+      "supporting-copy": { "displayName": "Supporting Copy", "purpose": "Descrições que esclarecem cada ação." },
+      "utility": { "displayName": "Utility", "purpose": "Avisos e informações práticas compactas." },
+      "label": { "displayName": "Label", "purpose": "Áreas de atuação abaixo da identidade principal." }
+    },
+    "shadows": [
+      { "name": "ambient-profile", "value": "0 28px 70px color-mix(in srgb, var(--moss-deep) 58%, transparent)", "purpose": "Separar suavemente o cartão principal do fundo sem acrescentar uma borda concorrente." },
+      { "name": "portrait-halo", "value": "0 0 0 7px var(--paper), 0 0 0 8px color-mix(in srgb, var(--gold) 35%, transparent)", "purpose": "Criar um halo discreto ao redor do retrato." },
+      { "name": "tactile-service", "value": "0 6px 16px color-mix(in srgb, var(--wine) 12%, transparent)", "purpose": "Dar resposta física macia aos links de atendimento." }
+    ],
+    "motion": [
+      { "name": "interaction", "value": "160ms ease", "purpose": "Hover, active, borda, sombra e mudança de fundo dos links." },
+      { "name": "reduced-motion", "value": "0s", "purpose": "Remover apenas as transições interativas quando o usuário prefere movimento reduzido." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "340px" },
+      { "name": "roomy", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Service Link",
+      "kind": "button",
+      "refersTo": "service-link",
+      "description": "Ação prioritária e tátil para escolher psicanálise ou tarô.",
+      "html": "<a class=\"ds-service-link\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7v10M7 12h10\"/></svg><span><strong>Agendar psicanálise</strong><small>Acompanhamento remoto</small></span><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></a>",
+      "css": ".ds-service-link { min-height: 76px; padding: 12px 14px; display: grid; grid-template-columns: 34px minmax(0,1fr) auto; align-items: center; gap: 11px; color: var(--wine-deep, #351b23); border: 1px solid transparent; border-radius: 16px; background: var(--paper, #fffaf1); box-shadow: 0 6px 16px color-mix(in srgb, var(--wine, #512c35) 12%, transparent); text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; } .ds-service-link svg { width: 22px; fill: none; stroke: var(--terracotta, #a8614f); stroke-width: 1.8; } .ds-service-link strong, .ds-service-link small { display: block; } .ds-service-link small { margin-top: 4px; color: var(--muted, #6d585d); } .ds-service-link:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in srgb, var(--wine, #512c35) 16%, transparent); } .ds-service-link:focus-visible { outline: 3px solid var(--terracotta, #a8614f); outline-offset: 3px; } .ds-service-link:active { transform: translateY(2px); box-shadow: 0 2px 8px color-mix(in srgb, var(--wine, #512c35) 10%, transparent); }"
+    },
+    {
+      "name": "Supporting Link",
+      "kind": "nav",
+      "refersTo": "supporting-link",
+      "description": "Entrada secundária para canais sociais e informações.",
+      "html": "<a class=\"ds-supporting-link\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/></svg><span><strong>Instagram</strong><small>Conteúdos e reflexões</small></span><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></a>",
+      "css": ".ds-supporting-link { min-height: 62px; padding: 12px 14px; display: grid; grid-template-columns: 34px minmax(0,1fr) auto; align-items: center; gap: 11px; color: var(--wine-deep, #351b23); border: 1px solid color-mix(in srgb, var(--gold, #b99a5d) 24%, var(--paper, #fffaf1)); border-radius: 16px; background: color-mix(in srgb, var(--paper, #fffaf1) 72%, transparent); text-decoration: none; transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease; } .ds-supporting-link svg { width: 22px; fill: none; stroke: var(--terracotta, #a8614f); stroke-width: 1.8; } .ds-supporting-link strong, .ds-supporting-link small { display: block; } .ds-supporting-link small { margin-top: 4px; color: var(--muted, #6d585d); } .ds-supporting-link:hover { transform: translateY(-2px); border-color: var(--gold, #b99a5d); background: var(--paper, #fffaf1); } .ds-supporting-link:focus-visible { outline: 3px solid var(--terracotta, #a8614f); outline-offset: 3px; } .ds-supporting-link:active { transform: translateY(2px); }"
+    },
+    {
+      "name": "About Panel",
+      "kind": "card",
+      "refersTo": "about-panel",
+      "description": "Pausa tonal para a apresentação profissional.",
+      "html": "<section class=\"ds-about\"><h2>Sobre o atendimento</h2><p>Um cuidado remoto voltado ao autoconhecimento e à reflexão.</p></section>",
+      "css": ".ds-about { padding: 22px 18px; color: var(--muted, #6d585d); border: 1px solid color-mix(in srgb, var(--terracotta, #a8614f) 28%, var(--paper, #fffaf1)); border-radius: 20px; background: color-mix(in srgb, var(--terracotta, #a8614f) 10%, var(--paper, #fffaf1)); font-family: Georgia, serif; } .ds-about h2 { margin: 0 0 9px; color: var(--wine-deep, #351b23); font-size: 23px; font-weight: 500; } .ds-about p { margin: 0; line-height: 1.55; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Consultório Ritual",
+    "overview": "Um espaço digital íntimo que combina confiança profissional com sinais discretos de ritual, ciclos e contemplação. Superfícies quentes acolhem o conteúdo; vinho, musgo e terracota criam gravidade sem tornar a experiência sombria.",
+    "keyCharacteristics": [
+      "Acolhedor e tátil",
+      "Profundidade suave e ambiental",
+      "Simbolismo contemplativo discreto",
+      "Hierarquia curta orientada ao contato"
+    ],
+    "rules": [
+      { "name": "Quiet Symbolism", "body": "Dourado e terracota sinalizam significado sem dominar grandes áreas.", "section": "colors" },
+      { "name": "Two Voice", "body": "Georgia conduz identidade e narrativa; Arial conduz ação e utilidade. Labels não antecedem títulos.", "section": "typography" },
+      { "name": "Ambient First", "body": "Sombras grandes pertencem apenas ao contêiner principal.", "section": "elevation" }
+    ],
+    "dos": [
+      "Preservar a prioridade visual dos dois links de atendimento.",
+      "Usar neutros quentes, bordas amareladas e foco visível.",
+      "Combinar profundidade ambiental com resposta tátil curta."
+    ],
+    "donts": [
+      "Não criar um esotérico carregado com ornamentos excessivos.",
+      "Não esfriar a interface com branco clínico e cinza azulado.",
+      "Não simular luxo ostensivo com dourado abundante.",
+      "Não nivelar ações prioritárias e canais secundários."
+    ]
+  }
+}

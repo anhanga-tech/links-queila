@@ -20,6 +20,7 @@ test("renderiza os serviços e canais confirmados", async () => {
   assert.match(html, /Queila de Oliveira/);
   assert.match(html, /Agendar psicanálise/);
   assert.match(html, /Consultar o tarô/);
+  assert.match(html, /Atendimentos realizados de forma remota/);
   assert.match(html, /tarot-card-icon/);
   assert.match(html, /Falar no WhatsApp/);
   assert.match(html, /YouTube/);
@@ -30,9 +31,13 @@ test("renderiza os serviços e canais confirmados", async () => {
 
 test("gera metadados estáticos e mantém a página protegida por noindex", async () => {
   const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+  assert.match(html, /<div id="root">[\s\S]*?<main class="site-shell">/i);
+  assert.doesNotMatch(html, /<div id="root"><\/div>/i);
+  assert.doesNotMatch(html, /<script[^>]+type="module"/i);
   assert.match(html, /name="robots" content="noindex, nofollow, nocache"/i);
   assert.match(html, /rel="canonical" href="https:\/\/deoliveirar\.com\/?"/i);
   assert.match(html, /property="og:title" content="Queila de Oliveira \| Psicanálise e Tarô"/i);
+  assert.match(html, /Atendimentos remotos de psicanálise e tarô/i);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /"@type":"Person"/);
   assert.doesNotMatch(html, /\{\{[A-Z_]+\}\}/);
@@ -43,6 +48,8 @@ test("mantém psicanálise em primeiro lugar e usa contatos públicos confirmado
   assert.ok(source.indexOf('id: "psicanalise"') < source.indexOf('id: "taro"'));
   assert.match(source, /icon: "brain"/);
   assert.match(source, /icon: "tarot-cards"/);
+  assert.match(source, /atendimento remoto de psicanálise/);
+  assert.match(source, /consulta remota de tarô/);
   assert.match(source, /encodeURIComponent\(link\.message/);
   assert.match(source, /5511988093689/);
   assert.match(source, /queiladeoliveirar@gmail\.com/);

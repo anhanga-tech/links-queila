@@ -1,6 +1,9 @@
 import react from "@vitejs/plugin-react";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { defineConfig } from "vite";
 import { siteConfig } from "./data/site-config";
+import { App } from "./src/App";
 
 function escapeAttribute(value: string) {
   return value
@@ -49,10 +52,30 @@ function metadataPlugin() {
   };
 }
 
-export default defineConfig({
-  plugins: [react(), metadataPlugin()],
+function staticPagePlugin() {
+  const markup = renderToStaticMarkup(createElement(App));
+
+  return {
+    name: "static-page",
+    transformIndexHtml: {
+      order: "pre" as const,
+      handler(html: string) {
+        return html
+          .replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
+          .replace('<script type="module" src="/src/main.tsx"></script>', "");
+      },
+    },
+  };
+}
+
+export default defineConfig(({ command }) => ({
+  plugins: [
+    react(),
+    metadataPlugin(),
+    ...(command === "build" ? [staticPagePlugin()] : []),
+  ],
   server: {
     host: "127.0.0.1",
     port: 3000,
   },
-});
+}));
