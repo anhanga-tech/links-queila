@@ -27,6 +27,8 @@ test("renderiza os serviços e canais confirmados", async () => {
   assert.match(html, /TikTok/);
   assert.match(html, /queiladeoliveirar@gmail\.com/);
   assert.match(html, /Sobre o atendimento/);
+  assert.match(html, /footer-signature-logo/);
+  assert.match(html, /anhanga-tech-logo\.svg/);
 });
 
 test("gera metadados estáticos e mantém a página protegida por noindex", async () => {

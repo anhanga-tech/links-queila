@@ -157,6 +157,17 @@ export function App() {
           </span>
           <p>Os atendimentos oferecidos não substituem acompanhamento médico, psicológico ou serviços de emergência.</p>
           <small>Em uma situação de urgência, procure o serviço de emergência da sua região.</small>
+          <div className="footer-signature">
+            <span>Feito por</span>
+            <img
+              className="footer-signature-logo"
+              src="/anhanga-tech-logo.svg"
+              alt="Anhangá.tech"
+              width="100"
+              height="20"
+              loading="lazy"
+            />
+          </div>
         </footer>
       </article>
     </main>
