@@ -25,7 +25,8 @@ export interface SiteConfig {
   profile: {
     name: string;
     professionalTitle: string;
-    eyebrow: string;
+    focusAreas: string;
+    serviceMode: string;
     introduction: string;
     about: string;
     portraitSrc: string;
@@ -47,7 +48,8 @@ export const siteConfig: SiteConfig = {
   profile: {
     name: "Queila de Oliveira",
     professionalTitle: "Psicanalista e taróloga",
-    eyebrow: "Psicanálise · Tarô · Autoconhecimento",
+    focusAreas: "Psicanálise · Tarô · Autoconhecimento",
+    serviceMode: "Atendimentos realizados de forma remota",
     introduction:
       "Ajudo pessoas em seu processo de autoconhecimento por meio da psicanálise e do tarô.",
     about:
@@ -66,7 +68,7 @@ export const siteConfig: SiteConfig = {
       description: "Converse sobre o acompanhamento",
       kind: "whatsapp",
       icon: "brain",
-      message: "Olá, gostaria de informações sobre o atendimento de psicanálise.",
+      message: "Olá, gostaria de informações sobre o atendimento remoto de psicanálise.",
       featured: true,
     },
     {
@@ -75,7 +77,7 @@ export const siteConfig: SiteConfig = {
       description: "Orientação para escolhas e ciclos",
       kind: "whatsapp",
       icon: "tarot-cards",
-      message: "Olá, gostaria de informações sobre uma consulta de tarô.",
+      message: "Olá, gostaria de informações sobre uma consulta remota de tarô.",
       featured: true,
     },
   ],
@@ -132,7 +134,7 @@ export const siteConfig: SiteConfig = {
   seo: {
     title: "Queila de Oliveira | Psicanálise e Tarô",
     description:
-      "Psicanálise, tarô e autoconhecimento com Queila de Oliveira. Entre em contato e conheça os atendimentos.",
+      "Atendimentos remotos de psicanálise e tarô com Queila de Oliveira, voltados ao autoconhecimento e à reflexão.",
     canonical: "https://deoliveirar.com",
   },
 };

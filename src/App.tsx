@@ -1,7 +1,13 @@
 import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
   Brain,
   EnvelopeSimple,
   InstagramLogo,
+  MapPin,
+  Moon,
+  StarFour,
   Sun,
   TiktokLogo,
   UserCircle,
@@ -56,7 +62,7 @@ function LinkIcon({ link }: { link: SiteLink }) {
 function LinkCard({ link }: { link: SiteLink }) {
   const external = link.kind === "external" || link.kind === "whatsapp";
   const label = external ? `${link.label} (abre em nova aba)` : link.label;
-  const arrow = link.kind === "anchor" ? "↓" : external ? "↗" : "→";
+  const ArrowIcon = link.kind === "anchor" ? ArrowDown : external ? ArrowUpRight : ArrowRight;
 
   return (
     <a
@@ -73,7 +79,9 @@ function LinkCard({ link }: { link: SiteLink }) {
         <strong>{link.label}</strong>
         <small>{link.description}</small>
       </span>
-      <span className="link-arrow" aria-hidden="true">{arrow}</span>
+      <span className="link-arrow" aria-hidden="true">
+        <ArrowIcon size={18} weight="bold" />
+      </span>
     </a>
   );
 }
@@ -81,8 +89,12 @@ function LinkCard({ link }: { link: SiteLink }) {
 export function App() {
   return (
     <main className="site-shell">
-      <div className="celestial-mark celestial-mark-one" aria-hidden="true">✦</div>
-      <div className="celestial-mark celestial-mark-two" aria-hidden="true">☾</div>
+      <div className="celestial-mark celestial-mark-one" aria-hidden="true">
+        <StarFour size={24} weight="fill" />
+      </div>
+      <div className="celestial-mark celestial-mark-two" aria-hidden="true">
+        <Moon size={42} weight="fill" />
+      </div>
 
       <article className="profile-card" aria-labelledby="profile-name">
         <header className="profile-header">
@@ -96,9 +108,10 @@ export function App() {
               fetchPriority="high"
             />
           </div>
-          <p className="eyebrow">{profile.eyebrow}</p>
           <h1 id="profile-name">{profile.name}</h1>
           <p className="professional-title">{profile.professionalTitle}</p>
+          <p className="profile-focus">{profile.focusAreas}</p>
+          <p className="service-mode">{profile.serviceMode}</p>
           <p className="introduction">{profile.introduction}</p>
         </header>
 
@@ -118,7 +131,6 @@ export function App() {
         </nav>
 
         <section className="about-panel" id="sobre" aria-labelledby="about-title">
-          <p className="about-kicker">Um cuidado que respeita seu tempo</p>
           <h2 id="about-title">Sobre o atendimento</h2>
           <p>{profile.about}</p>
         </section>
@@ -131,14 +143,18 @@ export function App() {
             rel="noopener noreferrer"
             aria-label={`${siteConfig.location.label} (abre em nova aba)`}
           >
-            <span aria-hidden="true">⌖</span>
+            <span aria-hidden="true"><MapPin size={20} weight="duotone" /></span>
             <span><strong>{siteConfig.location.label}</strong><small>{siteConfig.location.note}</small></span>
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"><ArrowUpRight size={18} weight="bold" /></span>
           </a>
         ) : null}
 
         <footer className="site-footer">
-          <span className="footer-ornament" aria-hidden="true">— ✦ —</span>
+          <span className="footer-ornament" aria-hidden="true">
+            <span />
+            <StarFour size={12} weight="fill" />
+            <span />
+          </span>
           <p>Os atendimentos oferecidos não substituem acompanhamento médico, psicológico ou serviços de emergência.</p>
           <small>Em uma situação de urgência, procure o serviço de emergência da sua região.</small>
         </footer>
