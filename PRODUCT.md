@@ -8,24 +8,24 @@ web
 
 ## Users
 
-O público principal são usuários vindos do Instagram interessados em terapia por psicanálise ou em uma tiragem de tarô. Eles acessam a página para conhecer as opções de atendimento e iniciar o contato adequado.
+O público principal são usuários vindos do Instagram interessados em atendimento remoto de psicanálise integrativa. Eles acessam a página para conhecer a profissional e iniciar o contato pelo WhatsApp.
 
 ## Product Purpose
 
-A página reúne os atendimentos e canais profissionais de Queila de Oliveira em um destino único. Seu principal resultado é encaminhar pessoas interessadas em psicanálise ou tarô para uma conversa no WhatsApp sobre o serviço escolhido.
+A página reúne o atendimento e os canais profissionais de Queila de Oliveira em um destino único. Seu principal resultado é encaminhar pessoas interessadas para uma conversa no WhatsApp sobre o atendimento.
 
 ## Positioning
 
-Os dois atendimentos possuem chamadas distintas para o WhatsApp, cada uma com uma mensagem predefinida específica. Isso identifica desde o primeiro contato se o interesse é psicanálise ou tarô e oferece um início de conversa contextualizado.
+Um único CTA de WhatsApp, com mensagem predefinida, contextualiza o primeiro contato antes da conversa. Canais secundários (Instagram, YouTube, TikTok, e-mail) e a apresentação da profissional dão suporte a essa decisão.
 
 ## Operating Context
 
-A descoberta ocorre principalmente pelo perfil de Queila no Instagram. O visitante abre a página de links, escolhe entre psicanálise e tarô e continua a conversa no WhatsApp. Os atendimentos são realizados remotamente.
+A descoberta ocorre principalmente pelo perfil de Queila no Instagram. O visitante abre a página de links e segue diretamente para o WhatsApp. Os atendimentos são realizados remotamente.
 
 ## Capabilities and Constraints
 
-- Oferecer entradas separadas para psicanálise e tarô.
-- Abrir o WhatsApp com uma mensagem diferente para cada modalidade, permitindo reconhecer o motivo do contato.
+- Oferecer um único ponto de contato destacado (WhatsApp) para agendar o atendimento.
+- Abrir o WhatsApp com uma mensagem predefinida, contextualizando o motivo do contato.
 - Disponibilizar também Instagram, YouTube, TikTok, e-mail e informações sobre a profissional.
 - Funcionar como uma aplicação React/TypeScript estática, publicada no Cloudflare Pages.
 - Não incluir formulários, banco de dados, autenticação ou rastreamento.
@@ -35,8 +35,8 @@ A descoberta ocorre principalmente pelo perfil de Queila no Instagram. O visitan
 ## Brand Commitments
 
 - Nome profissional: Queila de Oliveira.
-- Atuação apresentada: psicanalista e taróloga.
-- Temas centrais já afirmados: psicanálise, tarô e autoconhecimento.
+- Atuação apresentada: psicanalista integrativa.
+- Temas centrais já afirmados: psicanálise, análise junguiana, terapia holística e autoconhecimento.
 - Retrato oficial disponível em `public/queila-de-oliveira.jpg`.
 - O conteúdo não deve inventar credenciais, qualificações, depoimentos, resultados ou outras alegações profissionais ainda não confirmadas.
 
@@ -49,8 +49,8 @@ A descoberta ocorre principalmente pelo perfil de Queila no Instagram. O visitan
 
 ## Product Principles
 
-1. Levar rapidamente cada visitante ao atendimento que motivou sua chegada.
+1. Levar rapidamente cada visitante ao contato que motivou sua chegada.
 2. Contextualizar o primeiro contato antes de abrir a conversa no WhatsApp.
-3. Tratar psicanálise e tarô como opções distintas, claras e igualmente acessíveis.
+3. Manter o CTA de WhatsApp como ação central e inequívoca da página.
 4. Comunicar apenas informações profissionais confirmadas.
 5. Manter simples a jornada entre a descoberta no Instagram e o contato para atendimento remoto.

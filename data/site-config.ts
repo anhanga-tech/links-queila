@@ -47,49 +47,32 @@ export const siteConfig: SiteConfig = {
   isProductionReady: false,
   profile: {
     name: "Queila de Oliveira",
-    professionalTitle: "Psicanalista e taróloga",
-    focusAreas: "Psicanálise · Tarô · Autoconhecimento",
-    serviceMode: "Atendimentos realizados de forma remota",
+    professionalTitle: "Psicanalista Integrativa",
+    focusAreas: "Psicanálise · Análise Junguiana · Terapia Holística",
+    serviceMode: "Atendimentos on-line",
     introduction:
-      "Ajudo pessoas em seu processo de autoconhecimento por meio da psicanálise e do tarô.",
+      "Ajudo pessoas em seu processo de autoconhecimento e individuação.",
     about:
-      "Sou taróloga e psicanalista. Meu trabalho é voltado ao autoconhecimento e à reflexão sobre os caminhos, escolhas e ciclos de cada pessoa.",
+      "Meu trabalho está fundamentado na Psicanálise Integrativa e na abordagem junguiana. Como escritora e acadêmica em Antropologia, reúno diferentes perspectivas para compreender cada pessoa em sua singularidade. Ofereço uma escuta ética, acolhedora e confidencial, auxiliando na elaboração de conflitos, no autoconhecimento e nos processos de transformação.",
     portraitSrc: "/queila-de-oliveira.jpg",
     portraitAlt: "Queila de Oliveira",
   },
   contact: {
     whatsappNumber: "5511988093689",
-    email: "queiladeoliveirar@gmail.com",
+    email: "queila@deoliveirar.com",
   },
   services: [
     {
-      id: "psicanalise",
-      label: "Agendar psicanálise",
-      description: "Converse sobre o acompanhamento",
+      id: "whatsapp",
+      label: "Falar no WhatsApp",
+      description: "Agende sua sessão",
       kind: "whatsapp",
-      icon: "brain",
-      message: "Olá, gostaria de informações sobre o atendimento remoto de psicanálise.",
-      featured: true,
-    },
-    {
-      id: "taro",
-      label: "Consultar o tarô",
-      description: "Orientação para escolhas e ciclos",
-      kind: "whatsapp",
-      icon: "tarot-cards",
-      message: "Olá, gostaria de informações sobre uma consulta remota de tarô.",
+      icon: "whatsapp",
+      message: "Olá, encontrei seu perfil e gostaria de saber mais sobre os atendimentos.",
       featured: true,
     },
   ],
   otherLinks: [
-    {
-      id: "whatsapp",
-      label: "Falar no WhatsApp",
-      description: "Tire dúvidas antes de escolher",
-      kind: "whatsapp",
-      icon: "whatsapp",
-      message: "Olá, encontrei seu perfil e gostaria de saber mais sobre os atendimentos.",
-    },
     {
       id: "instagram",
       label: "Instagram",
@@ -117,10 +100,10 @@ export const siteConfig: SiteConfig = {
     {
       id: "email",
       label: "E-mail",
-      description: "queiladeoliveirar@gmail.com",
+      description: "queila@deoliveirar.com",
       kind: "email",
       icon: "email",
-      href: "mailto:queiladeoliveirar@gmail.com",
+      href: "mailto:queila@deoliveirar.com",
     },
     {
       id: "sobre",
@@ -132,9 +115,9 @@ export const siteConfig: SiteConfig = {
     },
   ],
   seo: {
-    title: "Queila de Oliveira | Psicanálise e Tarô",
+    title: "Queila de Oliveira | Psicanálise Integrativa",
     description:
-      "Atendimentos remotos de psicanálise e tarô com Queila de Oliveira, voltados ao autoconhecimento e à reflexão.",
+      "Atendimentos remotos de psicanálise integrativa com Queila de Oliveira, voltados ao autoconhecimento e à individuação.",
     canonical: "https://deoliveirar.com",
   },
 };
