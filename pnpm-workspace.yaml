@@ -6,3 +6,7 @@ overrides:
   esbuild: 0.28.1
 minimumReleaseAge: 10080
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  # Known pnpm false positive: semver@6 predates npm provenance, so pnpm
+  # flags it as a "trust downgrade" vs semver@7. https://github.com/pnpm/pnpm/issues/10202
+  - 'semver@6.3.1'
