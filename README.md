@@ -32,5 +32,7 @@ no projeto Pages somente depois de revisar os registros DNS existentes. Preserve
 registros MX e TXT. Configure `www.deoliveirar.com` separadamente para
 redirecionar à raiz.
 
-O projeto não possui formulários, banco de dados, autenticação ou rastreamento.
-Os botões apenas abrem WhatsApp, redes sociais, e-mail ou a seção interna.
+O projeto não possui formulários, banco de dados ou autenticação. Os botões
+apenas abrem WhatsApp, redes sociais, e-mail ou a seção interna. O único
+rastreamento presente é o script de analytics Traks, carregado no `<head>`
+de `index.html`.

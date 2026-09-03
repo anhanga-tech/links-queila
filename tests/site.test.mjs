@@ -51,6 +51,15 @@ test("gera metadados estáticos e mantém a página protegida por noindex", asyn
   assert.doesNotMatch(html, /\{\{[A-Z_]+\}\}/);
 });
 
+test("carrega o analytics Traks com a configuração correta", async () => {
+  const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+  assert.match(
+    html,
+    /<script[^>]+src="https:\/\/analytics-collect\.anhanga\.tur\.br\/t\.js"[^>]*><\/script>/i,
+  );
+  assert.match(html, /data-site="pb_live_i25ky6yk09lj1o9ha02o3ffu"/i);
+});
+
 test("mantém um único CTA de WhatsApp e usa contatos públicos confirmados", async () => {
   const { siteConfig, linkHref } = await loadSiteConfig();
 
