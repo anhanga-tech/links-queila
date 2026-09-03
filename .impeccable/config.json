@@ -1,3 +1,15 @@
 {
-  "buildPath": "code"
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "createdAt": "2026-09-03T17:48:12.314Z",
+        "reason": "DESIGN.md's Two-Voice Rule documents Arial as the intentional body/action-title font (Georgia for display/contemplation); pre-existing project choice, not introduced by this session"
+      }
+    ]
+  }
 }

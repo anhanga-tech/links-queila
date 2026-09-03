@@ -115,7 +115,9 @@ h1 { margin: 0; color: var(--wine-deep); font-size: clamp(30px, 9vw, 42px); font
   background: var(--paper);
   transition: transform var(--duration-interaction) ease, border-color var(--duration-interaction) ease, box-shadow var(--duration-interaction) ease, background-color var(--duration-interaction) ease;
 }
-.service-link { min-height: 76px; border-color: transparent; box-shadow: var(--shadow-service); }
+.service-link { min-height: 80px; padding: 17px 19px; gap: 14px; border-color: transparent; box-shadow: var(--shadow-service); }
+.service-link .link-copy strong { font-size: 17px; }
+.service-link .link-symbol svg { width: 28px; height: 28px; }
 .supporting-link { min-height: 62px; border-color: color-mix(in srgb, var(--gold) 24%, var(--paper)); background: color-mix(in srgb, var(--paper) 72%, transparent); }
 .link-card:hover { transform: translateY(-2px); background: var(--paper); }
 .supporting-link:hover { border-color: var(--gold); }
@@ -170,8 +172,8 @@ h1 { margin: 0; color: var(--wine-deep); font-size: clamp(30px, 9vw, 42px); font
 .site-footer { margin-top: 26px; padding: 0 8px; color: var(--muted); }
 .footer-ornament { width: 64px; margin: 0 auto 12px; color: var(--gold); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }
 .footer-ornament > span { height: 1px; background: currentColor; }
-.site-footer p { margin: 0 auto 7px; max-width: 42ch; font-size: var(--type-utility); line-height: 1.5; }
-.site-footer small { display: block; font-size: var(--type-label); line-height: 1.4; }
+.site-footer p { margin: 0 auto 16px; max-width: 42ch; font-size: var(--type-utility); line-height: 1.5; }
+.footer-divider { display: block; width: 34px; height: 1px; margin: 0 auto 16px; background: color-mix(in srgb, var(--gold) 40%, transparent); }
 .footer-signature { width: fit-content; margin: 18px auto 0; padding: 9px 14px 9px 16px; display: inline-flex; align-items: center; gap: 9px; color: color-mix(in srgb, var(--cream) 74%, transparent); border-radius: var(--radius-link); background: var(--wine-deep); }
 .footer-signature span { font-size: var(--type-label); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .footer-signature-logo { width: 100px; height: auto; display: block; }

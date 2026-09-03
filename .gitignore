@@ -39,3 +39,7 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# impeccable live mode session state (runtime only, not project config)
+.impeccable/live/*
+!.impeccable/live/config.json

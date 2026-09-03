@@ -131,7 +131,7 @@ export function App() {
         </nav>
 
         <section className="about-panel" id="sobre" aria-labelledby="about-title">
-          <h2 id="about-title">Sobre o atendimento</h2>
+          <h2 id="about-title">Sobre mim</h2>
           <p>{profile.about}</p>
         </section>
 
@@ -155,8 +155,8 @@ export function App() {
             <StarFour size={12} weight="fill" />
             <span />
           </span>
-          <p>Os atendimentos oferecidos não substituem acompanhamento médico, psicológico ou serviços de emergência.</p>
-          <small>Em uma situação de urgência, procure o serviço de emergência da sua região.</small>
+          <p>Os atendimentos oferecidos não substituem acompanhamento médico ou serviços de emergência.</p>
+          <span className="footer-divider" aria-hidden="true" />
           <div className="footer-signature">
             <span>Feito por</span>
             <img
