@@ -15,6 +15,15 @@ async function renderApp() {
   }
 }
 
+async function loadSiteConfig() {
+  const vite = await createServer({ server: { middlewareMode: true } });
+  try {
+    return await vite.ssrLoadModule("/data/site-config.ts");
+  } finally {
+    await vite.close();
+  }
+}
+
 test("renderiza os serviços e canais confirmados", async () => {
   const html = await renderApp();
   assert.match(html, /Queila de Oliveira/);
@@ -43,12 +52,20 @@ test("gera metadados estáticos e mantém a página protegida por noindex", asyn
 });
 
 test("mantém um único CTA de WhatsApp e usa contatos públicos confirmados", async () => {
-  const source = await readFile(new URL("../data/site-config.ts", import.meta.url), "utf8");
-  assert.match(source, /id: "whatsapp"/);
-  assert.match(source, /icon: "whatsapp"/);
-  assert.match(source, /featured: true/);
-  assert.match(source, /encodeURIComponent\(link\.message/);
-  assert.match(source, /5511988093689/);
-  assert.match(source, /queila@deoliveirar\.com/);
-  assert.match(source, /isProductionReady: false/);
+  const { siteConfig, linkHref } = await loadSiteConfig();
+
+  assert.equal(siteConfig.services.length, 1);
+  const [whatsappService] = siteConfig.services;
+  assert.equal(whatsappService.id, "whatsapp");
+  assert.equal(whatsappService.icon, "whatsapp");
+  assert.equal(whatsappService.featured, true);
+
+  assert.equal(siteConfig.contact.whatsappNumber, "5511988093689");
+  assert.equal(siteConfig.contact.email, "queila@deoliveirar.com");
+  assert.equal(siteConfig.isProductionReady, false);
+
+  assert.equal(
+    linkHref(whatsappService),
+    `https://wa.me/5511988093689?text=${encodeURIComponent(whatsappService.message)}`,
+  );
 });
