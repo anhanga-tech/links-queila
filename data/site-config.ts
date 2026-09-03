@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
   profile: {
     name: "Queila de Oliveira",
     professionalTitle: "Psicanalista Integrativa",
-    focusAreas: "Psicanálise · ANÁLISE JUNGUIANA · TerAPIA HOLÍSTICA",
+    focusAreas: "Psicanálise · Análise Junguiana · Terapia Holística",
     serviceMode: "Atendimentos on-line",
     introduction:
       "Ajudo pessoas em seu processo de autoconhecimento e individuação.",
