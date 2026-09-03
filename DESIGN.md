@@ -1,6 +1,6 @@
 ---
 name: "Queila de Oliveira"
-description: "Um consultório ritual acolhedor para psicanálise, tarô e autoconhecimento."
+description: "Um consultório ritual acolhedor para psicanálise e autoconhecimento."
 colors:
   wine: "#512c35"
   wine-deep: "#351b23"
@@ -55,7 +55,6 @@ typography:
     fontWeight: 700
     letterSpacing: "0.14em"
 rounded:
-  tarot-detail: "4px"
   link: "16px"
   location: "17px"
   panel: "20px"
@@ -82,8 +81,8 @@ components:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.wine-deep}"
     rounded: "{rounded.link}"
-    padding: "12px 14px"
-    height: "76px"
+    padding: "17px 19px"
+    height: "80px"
   supporting-link:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.wine-deep}"
@@ -110,7 +109,7 @@ components:
 
 O sistema combina a confiança silenciosa de um espaço de atendimento com sinais discretos de ritual, ciclos e contemplação. A experiência é íntima, centrada e humana: superfícies claras acolhem o conteúdo enquanto vinho, musgo e terracota criam gravidade sem tornar a página sombria.
 
-A composição é deliberadamente compacta e mobile-first, adequada a uma chegada pelo Instagram e a uma decisão rápida entre dois atendimentos. Ornamentos celestes e dourado aparecem como detalhes raros; não dominam a hierarquia nem transformam a interface em cenografia mística.
+A composição é deliberadamente compacta e mobile-first, adequada a uma chegada pelo Instagram e a um contato rápido com a profissional. Ornamentos celestes e dourado aparecem como detalhes raros; não dominam a hierarquia nem transformam a interface em cenografia mística.
 
 O sistema rejeita explicitamente o esotérico carregado, o clínico frio e o luxo ostensivo.
 
@@ -183,7 +182,7 @@ A página é uma coluna única mobile-first sobre um canvas de altura total. O c
 
 O ritmo vertical trabalha principalmente com intervalos de `11–26px`. As listas usam gaps de `11px`; blocos secundários começam após `18–26px`. Dentro dos links, a grade fixa o ícone em `34px`, preserva o texto como coluna flexível e mantém a seta no extremo. Abaixo de `340px`, padding, raio e coluna de ícone são reduzidos sem esconder conteúdo.
 
-A composição externa pode ser atmosférica, mas o conteúdo permanece em fluxo previsível: identidade, escolha do atendimento, canais secundários, apresentação e avisos.
+A composição externa pode ser atmosférica, mas o conteúdo permanece em fluxo previsível: identidade, CTA de WhatsApp, canais secundários, apresentação e avisos.
 
 ## Elevation & Depth
 
@@ -193,7 +192,7 @@ A profundidade é suave e ambiental. O grande cartão flutua sobre o musgo com u
 
 - **Ambient profile** (`0 28px 70px rgba(28, 35, 24, .34)`): separa o cartão principal do fundo natural.
 - **Portrait halo** (`0 0 0 7px #fffaf1, 0 0 0 8px rgba(185, 154, 93, .35)`): cria um anel cerimonial discreto ao redor do retrato.
-- **Tactile service** (`0 6px 16px` com vinho a 12%): dá apoio físico aos dois links prioritários; abre para `0 10px 24px` no hover e comprime para `0 2px 8px` no active.
+- **Tactile service** (`0 6px 16px` com vinho a 12%): dá apoio físico ao CTA principal de WhatsApp; abre para `0 10px 24px` no hover e comprime para `0 2px 8px` no active.
 
 ### Named Rules
 
@@ -201,7 +200,7 @@ A profundidade é suave e ambiental. O grande cartão flutua sobre o musgo com u
 
 ## Shapes
 
-O vocabulário é arredondado, orgânico e contido. O cartão principal usa `28px`; painéis internos, `16–20px`; o retrato é circular. Bordas finas e quentes definem as superfícies sem dureza. O pequeno ícone de carta de tarô é a exceção geométrica: raio de `4px`, moldura de `2px` e detalhes pontuais criam uma assinatura reconhecível.
+O vocabulário é arredondado, orgânico e contido. O cartão principal usa `28px`; painéis internos, `16–20px`; o retrato é circular. Bordas finas e quentes definem as superfícies sem dureza.
 
 Em telas muito estreitas, o cartão principal reduz seu raio para `22px`. Não use pílulas indiscriminadamente: o círculo é reservado ao retrato e a forma dos links continua retangular com cantos generosos.
 
@@ -212,7 +211,7 @@ Em telas muito estreitas, o cartão principal reduz seu raio para `22px`. Não u
 Os cartões são acolhedores e táteis, com conteúdo alinhado à esquerda dentro de uma página majoritariamente centralizada.
 
 - **Shape:** cantos de `16px`, borda quente de `1px` e grade ícone–texto–seta.
-- **Service:** altura mínima de `76px`, fundo Papel Quente, borda transparente e sombra tátil macia; representa os dois caminhos principais.
+- **Service:** altura mínima de `80px`, fundo Papel Quente, borda transparente e sombra tátil macia; representa o CTA principal de WhatsApp.
 - **Supporting:** altura mínima de `62px`, fundo mais leve e borda mais discreta; representa canais e informação.
 - **Hover / Active:** sobe `2px` no hover e desce `2px` no active; links secundários migram a borda para dourado e links de serviço ampliam ou comprimem a sombra.
 - **Focus:** outline terracota de `3px`, afastado `3px`; nunca remova sem substituição equivalente.
@@ -242,7 +241,7 @@ Lua, estrela, textura pontilhada e ornamentos são decorativos, recebem `aria-hi
 
 ### Do:
 
-- **Do** preserve a prioridade visual dos dois links de atendimento antes dos canais sociais.
+- **Do** preserve a prioridade visual do CTA de WhatsApp antes dos canais sociais.
 - **Do** use Papel Quente, creme e bordas amareladas para manter superfícies acolhedoras.
 - **Do** combine profundidade ambiental no contêiner com resposta tátil curta nas ações.
 - **Do** keep ícones claros, reconhecíveis e subordinados ao texto.

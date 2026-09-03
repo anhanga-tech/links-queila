@@ -115,9 +115,9 @@ export const siteConfig: SiteConfig = {
     },
   ],
   seo: {
-    title: "Queila de Oliveira | Psicanálise e Tarô",
+    title: "Queila de Oliveira | Psicanálise Integrativa",
     description:
-      "Atendimentos remotos de psicanálise e tarô com Queila de Oliveira, voltados ao autoconhecimento e à reflexão.",
+      "Atendimentos remotos de psicanálise integrativa com Queila de Oliveira, voltados ao autoconhecimento e à individuação.",
     canonical: "https://deoliveirar.com",
   },
 };
