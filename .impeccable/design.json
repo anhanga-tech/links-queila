@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-20T21:30:37-03:00",
+  "generatedAt": "2026-09-03T18:25:00-03:00",
   "title": "Design System: Queila de Oliveira",
   "extensions": {
     "colorMeta": {
@@ -47,9 +47,9 @@
       "name": "Service Link",
       "kind": "button",
       "refersTo": "service-link",
-      "description": "Ação prioritária e tátil para escolher psicanálise ou tarô.",
-      "html": "<a class=\"ds-service-link\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7v10M7 12h10\"/></svg><span><strong>Agendar psicanálise</strong><small>Acompanhamento remoto</small></span><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></a>",
-      "css": ".ds-service-link { min-height: 76px; padding: 12px 14px; display: grid; grid-template-columns: 34px minmax(0,1fr) auto; align-items: center; gap: 11px; color: var(--wine-deep, #351b23); border: 1px solid transparent; border-radius: 16px; background: var(--paper, #fffaf1); box-shadow: 0 6px 16px color-mix(in srgb, var(--wine, #512c35) 12%, transparent); text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; } .ds-service-link svg { width: 22px; fill: none; stroke: var(--terracotta, #a8614f); stroke-width: 1.8; } .ds-service-link strong, .ds-service-link small { display: block; } .ds-service-link small { margin-top: 4px; color: var(--muted, #6d585d); } .ds-service-link:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in srgb, var(--wine, #512c35) 16%, transparent); } .ds-service-link:focus-visible { outline: 3px solid var(--terracotta, #a8614f); outline-offset: 3px; } .ds-service-link:active { transform: translateY(2px); box-shadow: 0 2px 8px color-mix(in srgb, var(--wine, #512c35) 10%, transparent); }"
+      "description": "Ação prioritária e tátil para iniciar a conversa no WhatsApp.",
+      "html": "<a class=\"ds-service-link\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7v10M7 12h10\"/></svg><span><strong>Falar no WhatsApp</strong><small>Agende sua sessão</small></span><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></a>",
+      "css": ".ds-service-link { min-height: 80px; padding: 17px 19px; display: grid; grid-template-columns: 34px minmax(0,1fr) auto; align-items: center; gap: 14px; color: var(--wine-deep, #351b23); border: 1px solid transparent; border-radius: 16px; background: var(--paper, #fffaf1); box-shadow: 0 6px 16px color-mix(in srgb, var(--wine, #512c35) 12%, transparent); text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; } .ds-service-link svg { width: 22px; fill: none; stroke: var(--terracotta, #a8614f); stroke-width: 1.8; } .ds-service-link strong, .ds-service-link small { display: block; } .ds-service-link strong { font-size: 17px; } .ds-service-link small { margin-top: 4px; color: var(--muted, #6d585d); } .ds-service-link:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in srgb, var(--wine, #512c35) 16%, transparent); } .ds-service-link:focus-visible { outline: 3px solid var(--terracotta, #a8614f); outline-offset: 3px; } .ds-service-link:active { transform: translateY(2px); box-shadow: 0 2px 8px color-mix(in srgb, var(--wine, #512c35) 10%, transparent); }"
     },
     {
       "name": "Supporting Link",
@@ -64,7 +64,7 @@
       "kind": "card",
       "refersTo": "about-panel",
       "description": "Pausa tonal para a apresentação profissional.",
-      "html": "<section class=\"ds-about\"><h2>Sobre o atendimento</h2><p>Um cuidado remoto voltado ao autoconhecimento e à reflexão.</p></section>",
+      "html": "<section class=\"ds-about\"><h2>Sobre mim</h2><p>Um cuidado remoto voltado ao autoconhecimento e à individuação.</p></section>",
       "css": ".ds-about { padding: 22px 18px; color: var(--muted, #6d585d); border: 1px solid color-mix(in srgb, var(--terracotta, #a8614f) 28%, var(--paper, #fffaf1)); border-radius: 20px; background: color-mix(in srgb, var(--terracotta, #a8614f) 10%, var(--paper, #fffaf1)); font-family: Georgia, serif; } .ds-about h2 { margin: 0 0 9px; color: var(--wine-deep, #351b23); font-size: 23px; font-weight: 500; } .ds-about p { margin: 0; line-height: 1.55; }"
     }
   ],
@@ -83,7 +83,7 @@
       { "name": "Ambient First", "body": "Sombras grandes pertencem apenas ao contêiner principal.", "section": "elevation" }
     ],
     "dos": [
-      "Preservar a prioridade visual dos dois links de atendimento.",
+      "Preservar a prioridade visual do CTA de WhatsApp.",
       "Usar neutros quentes, bordas amareladas e foco visível.",
       "Combinar profundidade ambiental com resposta tátil curta."
     ],
