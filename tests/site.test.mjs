@@ -51,6 +51,17 @@ test("gera metadados estáticos e mantém a página protegida por noindex", asyn
   assert.doesNotMatch(html, /\{\{[A-Z_]+\}\}/);
 });
 
+test("carrega o analytics Traks com a configuração correta", async () => {
+  const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+  // Casa só o path (/t.js), não o host absoluto: o coletor pode mudar de
+  // domínio entre ambientes, e o teste não deve depender disso nem
+  // referenciar a URL de produção.
+  assert.match(
+    html,
+    /<script\b(?=[^>]*\bsrc="[^"]*\/t\.js")(?=[^>]*\bdata-site="pb_live_i25ky6yk09lj1o9ha02o3ffu")[^>]*><\/script>/i,
+  );
+});
+
 test("mantém um único CTA de WhatsApp e usa contatos públicos confirmados", async () => {
   const { siteConfig, linkHref } = await loadSiteConfig();
 

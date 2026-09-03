@@ -28,7 +28,8 @@ A descoberta ocorre principalmente pelo perfil de Queila no Instagram. O visitan
 - Abrir o WhatsApp com uma mensagem predefinida, contextualizando o motivo do contato.
 - Disponibilizar também Instagram, YouTube, TikTok, e-mail e informações sobre a profissional.
 - Funcionar como uma aplicação React/TypeScript estática, publicada no Cloudflare Pages.
-- Não incluir formulários, banco de dados, autenticação ou rastreamento.
+- Não incluir formulários, banco de dados ou autenticação.
+- Incluir o script de analytics Traks (`analytics-collect.anhanga.tur.br`), carregado no `<head>` de `index.html`, para medir visitas e cliques. Adição explicitamente solicitada e aprovada pelo responsável pelo site (Felipe Williams / Anhangá.tech) em 2026-09-03, conforme exigido pela seção "Security & Publication" de `AGENTS.md`. Cloudflare Zaraz é considerado para o futuro, mas não faz parte do escopo atual — o volume de tráfego ainda não justifica.
 - Permanecer sem indexação pública enquanto `isProductionReady` estiver desativado e até os dados profissionais serem revisados.
 - Preservar registros DNS externos ao site, especialmente MX e TXT, durante a publicação do domínio.
 
