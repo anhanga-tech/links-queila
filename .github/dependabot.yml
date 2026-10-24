@@ -9,3 +9,14 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    # Match pnpm's minimumReleaseAge (10080 minutes) so PRs pass install.
+    cooldown:
+      default-days: 7
+    groups:
+      # react and react-dom must always ship the exact same version.
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
